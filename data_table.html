@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Detection Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- themefy CSS -->
+    <link rel="stylesheet" href="vendors/themefy_icon/themify-icons.css" />
+    <!-- scrollabe  -->
+    <link rel="stylesheet" href="vendors/scroll/scrollable.css" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="vendors/font_awesome/css/all.min.css" />
+    <!-- datatable CSS -->
+    <link rel="stylesheet" href="vendors/datatable/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="vendors/datatable/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="vendors/datatable/css/buttons.dataTables.min.css" />
+    <!-- text editor css -->
+
+    <!-- menu css  -->
+    <link rel="stylesheet" href="css/metisMenu.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="crm_body_bg">
+    
+
+
+<!-- main content part here -->
+
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a class="small_logo" href="index.html"><img src="img/mini_logo.png" alt=""></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+    </div>
+    <ul id="sidebar_menu">
+        <!-- Dashboard -->
+        <li>
+            <a href="index.html" aria-expanded="false">
+                <div class="nav_icon_small">
+                    <img src="img/menu-icon/dashboard.svg" alt="">
+                </div>
+                <div class="nav_title">
+                    <span>Dashboard</span>
+                </div>
+            </a>
+        </li>
+
+        <!-- File Upload -->
+        <li>
+            <a href="test.html" aria-expanded="false">
+                <div class="nav_icon_small">
+                    <img src="img/menu-icon/16.svg" alt="">
+                </div>
+                <div class="nav_title">
+                    <span>Upload</span>
+                </div>
+            </a>
+        </li>
+
+        <!-- Upload History -->
+        <li>
+            <a href="data_table.html" aria-expanded="false">
+                <div class="nav_icon_small">
+                    <img src="img/menu-icon/2.svg" alt="">
+                </div>
+                <div class="nav_title">
+                    <span>Upload History</span>
+                </div>
+            </a>
+        </li>
+
+        <!-- API Usage -->
+
+    </ul>
+</nav>
+</nav>
+
+
+<!--/ sidebar  -->
+
+
+
+
+<section class="main_content dashboard_part large_header_bg">
+    <!-- menu  -->
+    <div class="container-fluid g-0">
+        <div class="row">
+            <div class="col-lg-12 p-0 ">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="ti-menu"></i>
+                    </div>
+                    <div class="line_icon open_miniSide d-none d-lg-block">
+                        <img src="img/line_img.png" alt="">
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                      
+                        <div class="profile_info">
+                            <img src="img/client_img.png" alt="#">
+                            <div class="profile_info_iner">
+                                <div class="profile_author_name">
+                                    <p>Raid AI </p>
+                                </div>
+                                <div class="profile_info_details">
+                                    <a href="#">My Profile </a>
+                                    <a href="#">Settings</a>
+                                    <a href="#" id="logout-button">Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="col-lg-12">
+                    <div class="white_card card_height_100 mb_30">
+                        <div class="white_card_header">
+                            <div class="box_header m-0">
+                                <div class="main-title">
+                                    <h3 class="m-0">Usage History</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="white_card_body">
+                            <div class="QA_section">
+                                <div class="white_box_tittle list_header">
+                                    <div class="box_right d-flex lms_block">
+                                        <div class="serach_field_2">
+                                            <div class="search_inner">
+                                                <form Active="#">
+                                                    <div class="search_field">
+                                                        <input type="text" placeholder="Search content here...">
+                                                    </div>
+                                                    <button type="submit"> <i class="ti-search"></i> </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+        
+                                <div class="table-responsive">
+                                    <table class="table lms_table_active">
+                                        <thead>
+                                            <tr>
+                                                <th>File Name</th>
+                                                <th>Upload Date</th>
+                                                <th>File Duration</th>
+                                                <th>Confidence Score</th>
+                                                <th>Result</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                       
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- footer part -->
+<div class="footer_part">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer_iner text-center">
+                    <p>2024 © Raid AI - Designed by <a href="#"> <i class="ti-heart"></i> </a><a href="#"> Moh</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- main content part end -->
+
+<!--/### CHAT_MESSAGE_BOX  ### -->
+<div id="back-top" style="display: none;">
+    <a title="Go to Top" href="#">
+        <i class="ti-angle-up"></i>
+    </a>
+</div>
+<!-- footer  -->
+<!-- footer  -->
+<!-- jquery slim -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstarp js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- sidebar menu  -->
+<script src="js/metisMenu.js"></script>
+<script>
+    // Logout Function
+    function logoutUser() {
+        // Remove all stored data related to authentication
+        localStorage.removeItem('jwt_token'); // Remove JWT token
+        localStorage.removeItem('auth_token'); // Remove any additional tokens, if needed
+        localStorage.removeItem('api_token'); // Remove API token if stored separately
+        window.location.href = 'login.html'; // Redirect to the login page
+    }
+
+    // Add event listener to the logout button or link
+    document.addEventListener('DOMContentLoaded', () => {
+        const logoutButton = document.querySelector('#logout-button'); // Use the logout button's ID
+        if (logoutButton) {
+            logoutButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default link behavior
+                logoutUser(); // Call the logout function
+            });
+        }
+    });
+</script>
+<!-- responsive table -->
+<script src="vendors/datatable/js/jquery.dataTables.min.js"></script>
+<script src="vendors/datatable/js/dataTables.responsive.min.js"></script>
+<script src="vendors/datatable/js/dataTables.buttons.min.js"></script>
+<script src="vendors/datatable/js/buttons.flash.min.js"></script>
+<script src="vendors/datatable/js/jszip.min.js"></script>
+<script src="vendors/datatable/js/pdfmake.min.js"></script>
+<script src="vendors/datatable/js/vfs_fonts.js"></script>
+<script src="vendors/datatable/js/buttons.html5.min.js"></script>
+<script src="vendors/datatable/js/buttons.print.min.js"></script>
+
+<!-- scrollabe  -->
+<script src="vendors/scroll/perfect-scrollbar.min.js"></script>
+<script src="vendors/scroll/scrollable-custom.js"></script>
+
+<!-- custom js -->
+<script>
+    async function fetchUserHistory() {
+        try {
+            // Retrieve the token dynamically from localStorage
+            const token = localStorage.getItem('jwt_token');
+            if (!token) {
+                alert('You are not logged in. Redirecting to login page.');
+                window.location.href = 'login.html'; // Redirect to login if no token
+                return;
+            }
+
+            const response = await fetch('http://127.0.0.1:8000/api/user-files/', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`, // Use the dynamically retrieved token
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                populateTable(result);
+            } else {
+                alert(result.error || 'Failed to fetch user history.');
+            }
+        } catch (error) {
+            console.error('Error fetching user history:', error);
+            alert('An error occurred while fetching your history. Please try again.');
+        }
+    }
+
+    function populateTable(data) {
+        const tableBody = document.querySelector('.table tbody');
+        tableBody.innerHTML = ''; // Clear existing rows
+
+        data.forEach((file) => {
+            const row = `
+                <tr>
+                    <td>${file.file_name}</td>
+                    <td>${file.created_at}</td>
+                    <td>${file.file_duration} Seconds</td>
+                    <td>${file.confidence}%</td>
+                    <td><span class="status_btn ${file.result === 'fake' ? 'Fake' : 'Real'}">${file.result}</span></td>
+                </tr>
+            `;
+            tableBody.insertAdjacentHTML('beforeend', row);
+        });
+
+        enableSearch(data); // Enable search functionality
+    }
+
+    function enableSearch(data) {
+        const searchField = document.querySelector('.search_field input');
+        const tableBody = document.querySelector('.table tbody');
+
+        searchField.addEventListener('input', (event) => {
+            const query = event.target.value.toLowerCase();
+            const filteredData = data.filter((file) =>
+                file.file_name.toLowerCase().includes(query) ||
+                file.created_at.toLowerCase().includes(query) ||
+                file.file_duration.toString().includes(query) ||
+                file.confidence.toString().includes(query) ||
+                file.result.toLowerCase().includes(query)
+            );
+
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            filteredData.forEach((file) => {
+                const row = `
+                    <tr>
+                        <td>${file.file_name}</td>
+                        <td>${file.created_at}</td>
+                        <td>${file.file_duration} Seconds</td>
+                        <td>${file.confidence}%</td>
+                        <td><span class="status_btn ${file.result === 'fake' ? 'Fake' : 'Real'}">${file.result}</span></td>
+                        <td><a href="${file.file_path}" class="action_btn" download>Download</a></td>
+                    </tr>
+                `;
+                tableBody.insertAdjacentHTML('beforeend', row);
+            });
+        });
+    }
+
+    // Call fetchUserHistory when the page loads
+    document.addEventListener('DOMContentLoaded', fetchUserHistory);
+</script>
+
+</body>
+</html>

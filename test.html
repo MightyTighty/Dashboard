@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Detection Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- themefy CSS -->
+    <link rel="stylesheet" href="vendors/themefy_icon/themify-icons.css" />
+    <!-- scrollabe  -->
+    <link rel="stylesheet" href="vendors/scroll/scrollable.css" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="vendors/font_awesome/css/all.min.css" />
+    <!-- datatable CSS -->
+    <link rel="stylesheet" href="vendors/datatable/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="vendors/datatable/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="vendors/datatable/css/buttons.dataTables.min.css" />
+    <!-- text editor css -->
+
+    <!-- menu css  -->
+    <link rel="stylesheet" href="css/metisMenu.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="crm_body_bg">
+    
+
+
+<!-- main content part here -->
+
+
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a class="large_logo" href="index.html"><img src="img/logo.png" alt=""></a>
+        <a class="small_logo" href="index.html"><img src="img/mini_logo.png" alt=""></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+    </div>
+    <ul id="sidebar_menu">
+        <!-- Dashboard -->
+        <li>
+            <a href="index.html" aria-expanded="false">
+                <div class="nav_icon_small">
+                    <img src="img/menu-icon/dashboard.svg" alt="">
+                </div>
+                <div class="nav_title">
+                    <span>Dashboard</span>
+                </div>
+            </a>
+        </li>
+
+        <!-- File Upload -->
+        <li>
+            <a href="test.html" aria-expanded="false">
+                <div class="nav_icon_small">
+                    <img src="img/menu-icon/16.svg" alt="">
+                </div>
+                <div class="nav_title">
+                    <span>Upload</span>
+                </div>
+            </a>
+        </li>
+
+        <!-- Upload History -->
+        <li>
+            <a href="data_table.html" aria-expanded="false">
+                <div class="nav_icon_small">
+                    <img src="img/menu-icon/2.svg" alt="">
+                </div>
+                <div class="nav_title">
+                    <span>Upload History</span>
+                </div>
+            </a>
+        </li>
+
+        <!-- API Usage -->
+
+    </ul>
+</nav>
+
+
+<!--/ sidebar  -->
+
+
+<section class="main_content dashboard_part large_header_bg">
+        <!-- menu  -->
+        <div class="container-fluid g-0">
+            <div class="row">
+                <div class="col-lg-12 p-0 ">
+                    <div class="header_iner d-flex justify-content-between align-items-center">
+                        <div class="sidebar_icon d-lg-none">
+                            <i class="ti-menu"></i>
+                        </div>
+                        <div class="line_icon open_miniSide d-none d-lg-block">
+                            <img src="img/line_img.png" alt="">
+                        </div>
+                        <div class="header_right d-flex justify-content-between align-items-center">
+                          
+                            <div class="profile_info">
+                                <img src="img/client_img.png" alt="#">
+                                <div class="profile_info_iner">
+                                    <div class="profile_author_name">
+                                        <p>Raid AI </p>
+                                    </div>
+                                    <div class="profile_info_details">
+                                        <a href="#">My Profile </a>
+                                        <a href="#">Settings</a>
+                                        <a href="#" id="logout-button">Log Out</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="white_card_body">
+        <div class="QA_section">
+            <div class="white_box_tittle list_header">
+                <div class="box_right d-flex lms_block">
+                    
+                </div>
+            </div>
+    
+<!-- Upload Section -->
+<div class="col-xl-6 offset-xl-3">
+    <div class="white_card mb_30">
+        <div class="white_card_header">
+            <div class="main-title">
+                <h3 class="m-0">Upload Audio For Detection</h3>
+            </div>
+        </div>
+        <div class="white_card_body text-center">
+            <!-- Drag & Drop Zone -->
+            <div
+                id="upload-zone"
+                ondragover="event.preventDefault();"
+                ondrop="handleFileDrop(event);"
+                style="border: 2px dashed #007bff; padding: 20px; color: #6c757d;"
+            >
+                Drag & Drop Audio Here
+            </div>
+            <button class="btn btn-primary mt-3" id="open-upload-button">Select File</button>
+            <input type="file" id="file-upload" style="display: none;" onchange="handleFileChange(event);" accept="audio/*" />
+            <button class="btn btn-success mt-3" onclick="uploadFile()">Upload</button>
+        </div>
+        
+
+<!-- File Analysis Section -->
+<div class="col-xl-6 offset-xl-3">
+    <div id="file-analysis-container" class="white_card mb_30">
+        <div class="white_card_header">
+            <div class="main-title">
+                <h3 class="m-0">Files Uploaded</h3>
+            </div>
+        </div>
+        <div class="white_card_body">
+            <ul id="analysis-list" class="list-group">
+                <li class="list-group-item text-muted">No files uploaded yet.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer part -->
+<!-- footer part -->
+<div class="footer_part">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer_iner text-center">
+                    <p>2024 © Raid AI - Designed by <a href="#"> <i class="ti-heart"></i> </a><a href="#"> Moh</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- main content part end -->
+</section>
+<!-- main content part end -->
+
+
+<!--/### CHAT_MESSAGE_BOX  ### -->
+<div id="back-top" style="display: none;">
+    <a title="Go to Top" href="#">
+        <i class="ti-angle-up"></i>
+    </a>
+</div>
+<!-- footer  -->
+<!-- footer  -->
+<!-- jquery slim -->
+<script src="js/utils.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', validateToken);
+</script>
+<script>
+    // Logout Function
+    function logoutUser() {
+        // Remove all stored data related to authentication
+        localStorage.removeItem('jwt_token'); // Remove JWT token
+        localStorage.removeItem('auth_token'); // Remove any additional tokens, if needed
+        localStorage.removeItem('api_token'); // Remove API token if stored separately
+        window.location.href = 'login.html'; // Redirect to the login page
+    }
+
+    // Add event listener to the logout button or link
+    document.addEventListener('DOMContentLoaded', () => {
+        const logoutButton = document.querySelector('#logout-button'); // Use the logout button's ID
+        if (logoutButton) {
+            logoutButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default link behavior
+                logoutUser(); // Call the logout function
+            });
+        }
+    });
+</script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstarp js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- sidebar menu  -->
+<script src="js/metisMenu.js"></script>
+
+<!-- responsive table -->
+<script src="vendors/datatable/js/jquery.dataTables.min.js"></script>
+<script src="vendors/datatable/js/dataTables.responsive.min.js"></script>
+<script src="vendors/datatable/js/dataTables.buttons.min.js"></script>
+<script src="vendors/datatable/js/buttons.flash.min.js"></script>
+<script src="vendors/datatable/js/jszip.min.js"></script>
+<script src="vendors/datatable/js/pdfmake.min.js"></script>
+<script src="vendors/datatable/js/vfs_fonts.js"></script>
+<script src="vendors/datatable/js/buttons.html5.min.js"></script>
+<script src="vendors/datatable/js/buttons.print.min.js"></script>
+
+<!-- scrollabe  -->
+<script src="vendors/scroll/perfect-scrollbar.min.js"></script>
+<script src="vendors/scroll/scrollable-custom.js"></script>
+
+<!-- custom js -->
+<script src="js/custom.js"></script>
+<script src="vendors/upload.js"></script>
+
+
+
+</body>
+</html>

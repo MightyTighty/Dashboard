@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Login</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="vendors/font_awesome/css/all.min.css" />
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .modal-header {
+            background-color: #6c63ff;
+            color: #fff;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .btn_1 {
+            background-color: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn_1:hover {
+            background-color: #5848c2;
+        }
+
+        a {
+            color: #6c63ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer_part {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f9f9f9;
+            font-size: 14px;
+            color: #6c6c6c;
+        }
+
+        #message-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+        }
+
+        #loading-spinner {
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="modal-content cs_modal">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">Log In</h5>
+            </div>
+            <div class="modal-body">
+                <div id="message-container"></div>
+                <div id="loading-spinner">
+                    <img src="img/loading.gif" alt="Loading..." width="50">
+                </div>
+
+                <form id="login-form">
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required />
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required />
+                       
+                    </div>
+                    <button type="submit" class="btn_1" id="login-button">Log In</button>
+                    <p class="text-center mt-3">
+                        Need an account? <a href="signup.html">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer_part">
+        <p>2024 © Influence - Designed by <a href="#">Dashboard</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function (event) {
+            event.preventDefault();
+    
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            const data = { email, password };
+    
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/login/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+    
+                const result = await response.json();
+    
+                if (response.ok) {
+                    // Store tokens locally
+                    localStorage.setItem('jwt_token', result.access_token);
+                    localStorage.setItem('refresh_token', result.refresh_token);
+                    localStorage.setItem('api_key', result.api_key);
+    
+                    alert('Login successful!');
+                    window.location.href = 'index.html'; // Redirect to dashboard
+                } else {
+                    const errorMessage = result.error || 'Invalid login credentials.';
+                    document.getElementById('message-container').innerHTML = `<div class="alert alert-danger">${errorMessage}</div>`;
+                    document.getElementById('message-container').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('message-container').innerHTML = `<div class="alert alert-danger">An unexpected error occurred. Please try again later.</div>`;
+                document.getElementById('message-container').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>
