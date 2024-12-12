@@ -1,0 +1,12 @@
+{
+    "name": "raidai-dashboard",
+    "version": "1.0.0",
+    "description": "raid ai api dashboard project",
+    "main": "index.html",
+    "scripts": {
+      "start": "serve ."
+    },
+    "dependencies": {},
+    "devDependencies": {}
+  }
+  
